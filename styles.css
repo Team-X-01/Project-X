@@ -1,0 +1,229 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    margin: 0;
+    background-color: #12151f;
+    height: 100vh;
+    overflow: hidden; /* Prevent scrolling on the body */
+}
+
+#main-chat, .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #12151f;
+    overflow: hidden;
+}
+
+/* Welcome Screen */
+#welcome-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #12151f;
+    text-align: center;
+}
+
+.welcome-content h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.welcome-content p {
+    color: #b0b3c1; /* Readable grey color */
+    margin-bottom: 25px;
+}
+
+#welcome-form input {
+    width: 80%;
+    max-width: 300px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #1c202e;
+    border-radius: 25px;
+    background-color: #1c202e;
+    color: #fff;
+    font-size: 1em;
+    text-align: center;
+}
+
+#welcome-form button {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    background-color: #4f46e5;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #12151f;
+    border-bottom: 1px solid #1c202e;
+}
+
+.header-left, .logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.logo i {
+    margin-right: 8px;
+    color: #4f46e5;
+}
+
+/* Main chat area */
+#chat-container {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+#messages {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.message-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+    padding: 10px 15px;
+    border-radius: 18px;
+    word-wrap: break-word;
+}
+
+.message-container.yours {
+    align-self: flex-end;
+    background-color: #4f46e5;
+    border-bottom-right-radius: 4px;
+}
+
+.message-container.theirs {
+    align-self: flex-start;
+    background-color: #2a2d3b;
+    border-bottom-left-radius: 4px;
+}
+
+.username {
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+    color: #b0b3c1;
+}
+
+.message-container.yours .username {
+    color: #e0e1e6;
+}
+
+/* Footer and input form */
+footer {
+    padding: 20px;
+    border-top: 1px solid #1c202e;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    background-color: #1c202e;
+    border-radius: 25px;
+    padding: 5px 10px;
+}
+
+#input {
+    flex: 1;
+    background: none;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    font-size: 1em;
+}
+
+#input:focus { outline: none; }
+
+#send {
+    background-color: #4f46e5;
+    color: #fff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+/* Username Edit Modal styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    display: none; /* Hidden by default */
+}
+
+.modal-content {
+    background-color: #2a2d3b;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+.modal-content h2 { margin-top: 0; }
+
+.modal-content p { color: #b0b3c1; margin-bottom: 20px; }
+
+#username-form input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #1c202e;
+    border-radius: 8px;
+    background-color: #1c202e;
+    color: #fff;
+    font-size: 1em;
+}
+
+#username-form button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #4f46e5;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.modal-overlay.active { display: flex; }

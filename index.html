@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project X Chat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Initial Welcome Screen (Initially Hidden) -->
+    <div id="welcome-screen" style="display: none;">
+        <div class="welcome-content">
+            <h2>Welcome to Project X !</h2>
+            <p>Enter your username in the text box below and hit OK</p>
+            <form id="welcome-form">
+                <input id="welcome-username-input" type="text" placeholder="Enter your username" required>
+                <button type="submit">OK</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Chat Interface (Initially Hidden) -->
+    <div id="main-chat" style="display: none;">
+        <div class="container">
+            <header>
+                <div class="header-left">
+                    <div class="logo">
+                        <i class="fa-solid fa-plus"></i>
+                        <span>Project X</span>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <button id="edit-username" class="icon-button" aria-label="Edit username">
+                        <i class="fa-solid fa-pencil"></i>
+                    </button>
+                </div>
+            </header>
+
+            <main id="chat-container">
+                <div id="messages">
+                    <!-- Messages will be injected here -->
+                </div>
+            </main>
+
+            <footer>
+                <form id="form">
+                    <div class="input-container">
+                        <input id="input" autocomplete="off" placeholder="Send anything" aria-label="Message input" disabled>
+                        <button id="send" type="submit" class="icon-button" aria-label="Send message" disabled><i class="fa-solid fa-arrow-up"></i></button>
+                    </div>
+                </form>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Username Modal (for editing) -->
+    <div id="username-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h2 id="modal-title">Change Username</h2>
+            <p>Enter your new username below.</p>
+            <form id="username-form">
+                <input id="username-input" type="text" placeholder="Enter your username" required>
+                <button id="save-username" type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
